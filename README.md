@@ -31,5 +31,11 @@ mFriendList = mParams.getParcelableArrayList(FriendChooser.RESULT_BUDDIES_SELECT
   
     修改DeviceAuthorityChooser,添加ContentResolver。
     
+    增加好友--startDeviceShareFriendChooser-startActivityForResult(...,REQUEST_CODE_SHARE_FRIEND_CHOOSER)-->onActivityResult
+    -PostCgiProxy(...,mSendBindListObserver)-->修改mFriendList和insertFriendToSharedPreferences
+    删除好友--startDeviceDeleteFriendChooserActivity-REQUEST_CODE_DELETE_FRIEND_CHOOSER--> mFriendList = unDeleteFriends
     
+    首次进入--OnDeviceOperationRst//设备绑定，解除绑定操作回调-进入DeviceOp_FetchOnlineStatus-->进入DeviceResultHandler广播
+    好友接受绑定--OnDeviceOperationRst--DeviceOp_SomebodyJoin
+    好友解除绑定--OnDeviceOperationRst--DeviceOp_SomebodyQuit
     
